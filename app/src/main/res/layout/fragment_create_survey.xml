@@ -3,56 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainScreen">
+    tools:context=".CreateSurvey">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent" >
 
             <Button
-                android:id="@+id/takeTest"
+                android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Take test" />
-
-            <Button
-                android:id="@+id/takeSurvey"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Take Survey" />
+                android:text="Back" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
 
-            <Button
-                android:id="@+id/createTest"
-                android:layout_width="116dp"
-                android:layout_height="wrap_content"
-                android:text="Create Test" />
-
-            <Button
-                android:id="@+id/createSurvey"
+            <EditText
+                android:id="@+id/textBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Create Survey" />
+                android:ems="10"
+                android:hint="Title"
+                android:inputType="textPersonName" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+        </TableRow>
     </TableLayout>
 
 </FrameLayout>

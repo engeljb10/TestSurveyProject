@@ -23,14 +23,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void seeQuestionare(){
+    public void CreateSurvey(){
         android.support.v4.app.FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        MainScreen menu_fragment = MainScreen.newInstance();
-        transaction.replace(R.id.Activity,menu_fragment);
+        CreateSurvey surveyFrag = CreateSurvey.newInstance();
+        transaction.replace(R.id.Activity,surveyFrag);
         transaction.commit();
 
     }
+    public void CreateTest(){
+        android.support.v4.app.FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        CreateTest testFrag = CreateTest.newInstance();
+        transaction.replace(R.id.Activity,testFrag);
+        transaction.commit();
 
+    }
 
 }

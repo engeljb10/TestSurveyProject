@@ -11,15 +11,21 @@ import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MainScreen#newInstance} factory method to
+ * Use the {@link CreateTest#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MainScreen extends Fragment {
+public class CreateTest extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
 
 
-    public MainScreen() {
+    public CreateTest() {
         // Required empty public constructor
     }
 
@@ -29,55 +35,37 @@ public class MainScreen extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MainScreen.
+     * @return A new instance of fragment CreateTest.
      */
     // TODO: Rename and change types and number of parameters
-    public static MainScreen newInstance() {
-        MainScreen fragment = new MainScreen();
+    public static CreateTest newInstance() {
+        CreateTest fragment = new CreateTest();
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View myView = inflater.inflate(R.layout.fragment_main_screen, container, false);
-        Button myButton = myView.findViewById(R.id.createSurvey);
-        myButton.setOnClickListener(new View.OnClickListener() {
+        View view = inflater.inflate(R.layout.fragment_create_test, container, false);
+        Button backButton = view.findViewById(R.id.back);
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("Hello");
-                //MainActivity.
+                ((MainActivity)getActivity()).goToMain();
             }
         });
-        Button createS = myView.findViewById(R.id.createSurvey);
-        createS.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                ((MainActivity)getActivity()).CreateSurvey();
+        return view;
 
-            }
-
-
-
-        });
-        Button createT = myView.findViewById(R.id.createTest);
-        createT.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                ((MainActivity)getActivity()).CreateTest();
-
-            }
-
-
-
-        });
-        return myView;
     }
 
 }
